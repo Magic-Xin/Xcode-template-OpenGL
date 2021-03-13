@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Kind</key>
+	<string>Xcode.Xcode3.ProjectTemplateUnitKind</string>
+	<key>Identifier</key>
+	<string>com.magicxin.dt.unit.OpenGLProject</string>
+	<key>Ancestors</key>
+	<array>
+		<string>com.apple.dt.unit.base</string>
+		<string>com.apple.dt.unit.osxBase</string>
+	</array>
+	<key>Concrete</key>
+	<true/>
+	<key>SortOrder</key>
+	<integer>50</integer>
+	<key>Description</key>
+	<string>This template creates a OpenGLProject</string>
+	<key>Targets</key>
+	<array>
+		<dict>
+			<key>Frameworks</key>
+			<array>
+				<string>OpenGL</string>
+			</array>
+			<key>ProductType</key>
+			<string>com.apple.product-type.tool</string>
+			<key>TargetIdentifier</key>
+			<string>com.apple.dt.commandLineToolTarget</string>
+			<key>BuildPhases</key>
+			<array>
+				<dict>
+					<key>Class</key>
+					<string>Sources</string>
+				</dict>
+				<dict>
+					<key>Class</key>
+					<string>Frameworks</string>
+				</dict>
+				<dict>
+					<key>Class</key>
+					<string>CopyFiles</string>
+					<key>DstPath</key>
+					<string>/usr/share/man/man1/</string>
+					<key>DstSubfolderSpec</key>
+					<string>0</string>
+					<key>RunOnlyForDeploymentPostprocessing</key>
+					<string>YES</string>
+				</dict>
+			</array>
+		</dict>
+	</array>
+	<key>Options</key>
+	<array>
+		<dict>
+			<key>Identifier</key>
+			<string>languageChoice</string>
+			<key>Name</key>
+			<string>Language:</string>
+			<key>Description</key>
+			<string>The primary implementation language for the command-line tool</string>
+			<key>Default</key>
+			<string>C++</string>
+			<key>Type</key>
+			<string>popup</string>
+			<key>Values</key>
+			<array>
+				<string>C++</string>
+			</array>
+			<key>Units</key>
+			<dict>
+				<key>C++</key>
+				<dict>
+					<key>Nodes</key>
+					<array>
+						<string>main.cpp:comments</string>
+						<string>main.cpp:include</string>
+						<string>main.cpp:main:content</string>
+						<string>glad.c</string>
+					</array>
+					<key>Definitions</key>
+					<dict>
+						<key>main.cpp:include</key>
+						<string>#pragma clang diagnostic ignored &quot;-Wdeprecated-declarations&quot;
+
+#include &lt;glad/glad.h&gt;
+#include &lt;GLFW/glfw3.h&gt;
+#include &lt;iostream&gt;
+</string>
+						<key>main.cpp:main:content</key>
+						<string>// insert code here...
+return 0;
+</string>
+					</dict>
+				</dict>
+			</dict>
+		</dict>
+	</array>
+	<key>Definitions</key>
+	<dict>
+		<key>glad.c</key>
+		<dict>
+			<key>Path</key>
+			<string>./glad.c</string>
+		</dict>
+		<key>*:main</key>
+		<dict>
+			<key>Beginning</key>
+			<string>int main(int argc, const char * argv[]) {</string>
+			<key>End</key>
+			<string>}</string>
+			<key>Indent</key>
+			<integer>1</integer>
+		</dict>
+	</dict>
+	<key>Project</key>
+	<dict>
+		<key>SharedSettings</key>
+		<dict>
+			<key>CLANG_WARN_DOCUMENTATION_COMMENTS</key>
+			<string>NO</string>
+			<key>HEADER_SEARCH_PATHS</key>
+			<array>
+				<string>$(GLAD_PATH)/include</string>
+				<string>$(GLFW_PATH)/include</string>
+				<string>$(GLEW_PATH)/include</string>
+			</array>
+			<key>OTHER_LDFLAGS</key>
+			<array>
+				<string>-ObjC -all_load -weak_library $(GLFW_PATH)/lib/libglfw.dylib $(GLEW_PATH)/lib/libGLEW.dylib</string>
+			</array>
+		</dict>
+	</dict>
+</dict>
+</plist>
